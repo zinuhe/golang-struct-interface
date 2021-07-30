@@ -14,7 +14,8 @@ type response struct {
 func main() {
     data := &response {
             SessionState: "__sessionState",
-            Scope: "__scope" }
+            Scope: "__scope",
+    }
 
     jsonData, _ := json.Marshal(data)
     fmt.Println("*data:", *data)
@@ -27,4 +28,3 @@ func main() {
     json.Unmarshal(jsonData, &out)
     fmt.Println("out:", out)
 }
-
