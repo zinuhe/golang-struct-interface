@@ -56,7 +56,11 @@ For reference [Go by example: Structs](https://gobyexample.com/structs)
 <br>
 <h1>Interfaces</h1>
 
-Interfaces are named collections of method signatures.
+An interface is two things: 
+
+It is a set of methods (Interfaces are named collections of method signatures), 
+but it is also a type
+
 
 To implement an interface in Go, we just need to implement all the methods in the interface.
 
