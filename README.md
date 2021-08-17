@@ -64,6 +64,7 @@ If a variable has an interface type, then we can call methods that are in the na
 A variable of type interface can hold any value which implements the interface. This property of interfaces is used to achieve polymorphism in Go.
 
 For reference [Go by example: Interfaces](https://gobyexample.com/interfaces)
+[How to use interfaces in Go](https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)
 
 
 <br>
@@ -83,5 +84,11 @@ func (r *rect) area() int {
 }
 ```
 
+Methods can be defined for either pointer or value receiver types. Here’s an example of a value receiver.
+```go
+func (r rect) perim() int {
+    return 2*r.width + 2*r.height
+}
+```
 
 For reference [Go by example: Methods](https://gobyexample.com/methods)
