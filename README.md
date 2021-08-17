@@ -63,7 +63,8 @@ To implement an interface in Go, we just need to implement all the methods in th
 If a variable has an interface type, then we can call methods that are in the named interface. 
 A variable of type interface can hold any value which implements the interface. This property of interfaces is used to achieve polymorphism in Go.
 
-For reference [Go by example: Interfaces](https://gobyexample.com/interfaces)
+For reference<br>
+[Go by example: Interfaces](https://gobyexample.com/interfaces)<br>
 [How to use interfaces in Go](https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)
 
 
