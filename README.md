@@ -23,6 +23,16 @@ type person struct {
 ```
 
 ```go
+var p person
+```
+
+```go
+c := new(person)
+// This allocates memory for all the fields, sets each of them to their zero value 
+// and returns a pointer *person
+```
+
+```go
 p := person{name: "Sean", age: 50}
 ```
 
