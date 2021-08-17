@@ -55,6 +55,8 @@ For reference [Go by example: Structs](https://gobyexample.com/structs)
 
 <h1>Interfaces</h1>
 
+A variable of type interface can hold any value which implements the interface. This property of interfaces is used to achieve polymorphism in Go.
+
 For reference [Go by example: Interfaces](https://gobyexample.com/interfaces)
 
 
