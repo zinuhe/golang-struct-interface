@@ -61,7 +61,10 @@ p := newPerson("Jon")
 ```
 
 
-For reference [Go by example: Structs](https://gobyexample.com/structs)
+For reference<br>
+[Go by example: Structs](https://gobyexample.com/structs)<br>
+[golang-book](https://www.golang-book.com/books/intro/9)
+
 
 <br>
 <h1>Interfaces</h1>
