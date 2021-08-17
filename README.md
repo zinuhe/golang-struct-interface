@@ -67,6 +67,37 @@ To implement an interface in Go, we just need to implement all the methods in th
 If a variable has an interface type, then we can call methods that are in the named interface. 
 A variable of type interface can hold any value which implements the interface. This property of interfaces is used to achieve polymorphism in Go.
 
+
+
+The interface{} type
+
+The interface{} type is the interface that has no methods. Since there is no implements keyword, all types implement at least zero methods, and satisfying an interface is done automatically, all types satisfy the empty interface. That means that if you write a function that takes an interface{} value as a parameter, you can supply that function with any value.
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func PrintAll(vals []interface{}) {
+    for _, val := range vals {
+        fmt.Println(val)
+    }
+}
+
+func main() {
+    names := []string{"stanley", "david", "oscar"}
+    vals := make([]interface{}, len(names))
+    for i, v := range names {
+        vals[i] = v
+    }
+    PrintAll(vals)
+}
+```
+That’s pretty ugly.
+
+
 For reference<br>
 [Go by example: Interfaces](https://gobyexample.com/interfaces)<br>
 [How to use interfaces in Go](https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)
