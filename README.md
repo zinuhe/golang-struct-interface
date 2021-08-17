@@ -53,12 +53,35 @@ p := newPerson("Jon")
 
 For reference [Go by example: Structs](https://gobyexample.com/structs)
 
+<br>
 <h1>Interfaces</h1>
 
+Interfaces are named collections of method signatures.
+
+To implement an interface in Go, we just need to implement all the methods in the interface.
+
+If a variable has an interface type, then we can call methods that are in the named interface. 
 A variable of type interface can hold any value which implements the interface. This property of interfaces is used to achieve polymorphism in Go.
 
 For reference [Go by example: Interfaces](https://gobyexample.com/interfaces)
 
 
+<br>
 <h1>Methods</h1>
 
+Go supports methods defined on struct types.
+
+This area method has a receiver type of *rect.
+
+```go
+type rect struct {
+    width, height int
+}
+
+func (r *rect) area() int {
+    return r.width * r.height
+}
+```
+
+
+For reference [Go by example: Methods](https://gobyexample.com/methods)
