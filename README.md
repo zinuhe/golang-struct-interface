@@ -141,3 +141,8 @@ func (r rect) perim() int {
 ```
 
 For reference [Go by example: Methods](https://gobyexample.com/methods)
+
+
+<br>
+<h1>Mocking</h1>
+[Check this](https://stackoverflow.com/questions/68100402/how-to-write-unit-test-in-golang-usng-echo-for-end-point-url-using-go-mock-gen-m)<br>
