@@ -23,6 +23,13 @@ type person struct {
 ```
 
 ```go
+var p person = person{         
+		name: "John",         
+		age: 30,     
+	}
+```
+
+```go
 var p person
 ```
 
