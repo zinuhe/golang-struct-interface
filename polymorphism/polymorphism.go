@@ -125,4 +125,12 @@ func PurchaseCalculator() {
 	// ALL at the same time
 	purchases := []PaymentMethod{purchase1, purchase2}
 	calculateTotalPurchases(purchases)
+
+	// Only one
+	var x PaymentMethod = CreditCard{
+		description: "desc",
+		amount:      10,
+		commission:  5,
+	}
+	fmt.Println("x.Total:", x.calculateTotal())
 }
