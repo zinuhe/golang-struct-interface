@@ -125,6 +125,7 @@ func main() {
 That’s pretty ugly.
 
 <br><br>
+We say that something satisfies this interface (or implements this interface) if it has a method with the exact signature *String() string*.
 ```go
 type Stringer interface {
     String() string
@@ -139,9 +140,17 @@ func (b Book) String() string {
     return fmt.Sprintf("Book: %s - %s", b.Title, b.Author)
 }
 ```
-We say that something satisfies this interface (or implements this interface) if it has a method with the exact signature *String() string*.
 
 
+<br><br>
+The following *Count* type also satisfies the *fmt.Stringer* interface — again because it has a method with the exact signature *String() string*.
+```go
+type Count int
+
+func (c Count) String() string {
+    return strconv.Itoa(int(c))
+}
+```
 
 
 For reference<br>
