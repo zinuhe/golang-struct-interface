@@ -27,6 +27,7 @@ func main() {
   b1 := bs{}
   b1.getSecond("b1")
 
+  //se puede llamar 'bs{}' porque 'bs{}' implementa 's' ya que cumple implementando 'getSecond'
   a1 := As{bs{}}
   a1.GetFirst("a1")
 }
