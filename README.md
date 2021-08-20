@@ -7,7 +7,13 @@ go mod used
 go mod init github.com/zinuhe/golang-struct-interface
 ```
 
-<h1>Structs</h1>
+1. [Structs](#struct)
+2. [Interfaces](#interface)
+3. [Methods](#method)
+4. [Mocks](#mock)
+
+<a name="struct"></a>
+<h1>1. Structs</h1>
 Go's structs are typed collections of fields. They are useful to group data together to form records
 
 It’s idiomatic to encapsulate new struct creation in constructor functions
@@ -74,7 +80,8 @@ For reference<br>
 
 
 <br>
-<h1>Interfaces</h1>
+<a name="interface"></a>
+<h1>2. Interfaces</h1>
 
 An interface is two things: 
 
@@ -117,14 +124,35 @@ func main() {
 ```
 That’s pretty ugly.
 
+<br><br>
+```go
+type Stringer interface {
+    String() string
+}
+
+type Book struct {
+    Title  string
+    Author string
+}
+
+func (b Book) String() string {
+    return fmt.Sprintf("Book: %s - %s", b.Title, b.Author)
+}
+```
+We say that something satisfies this interface (or implements this interface) if it has a method with the exact signature *String() string*.
+
+
+
 
 For reference<br>
 [Go by example: Interfaces](https://gobyexample.com/interfaces)<br>
-[How to use interfaces in Go](https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)
+[How to use interfaces in Go](https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go)<br>
+[interfaces-explained](https://www.alexedwards.net/blog/interfaces-explained)
 
 
 <br>
-<h1>Methods</h1>
+<a name="method"></a>
+<h1>3. Methods</h1>
 
 Go supports methods defined on struct types.
 
@@ -151,7 +179,8 @@ For reference [Go by example: Methods](https://gobyexample.com/methods)
 
 
 <br>
-<h1>Mocking</h1>
+<a name="mock"></a>
+<h1>4. Mocking</h1>
 [Check this](https://stackoverflow.com/questions/68100402/how-to-write-unit-test-in-golang-usng-echo-for-end-point-url-using-go-mock-gen-m)<br>
 [Check](https://dev.to/techschoolguru/mock-db-for-testing-http-api-in-go-and-achieve-100-coverage-4pa9)<br>
 
