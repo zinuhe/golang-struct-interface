@@ -1,10 +1,9 @@
 package main
 
-import (
-    "fmt"
-)
+import "fmt"
+
 type s interface{ 
-    getSecond()
+    getSecond(msg string)
 }
 
 type As struct{
@@ -12,20 +11,24 @@ type As struct{
 }
 
 type bs struct{
-
 }
 
-func (ss *As) GetFirst() {
-    ss.getSecond()
+func (ss As) GetFirst(msg string) {
+    ss.getSecond(msg)
 }
 
-func (ss bs) getSecond() {
-    fmt.Println("--get_second--")
+func (ss bs) getSecond(msg string) {
+    fmt.Println("--get_second:", msg)
 }
 
 func main() {
   fmt.Printf("As{bs{}}: %+v \n\n", As{bs{}})
 
-  a1 := bs{}
-  a1.getSecond()
+  b1 := bs{}
+  b1.getSecond("b1")
+
+  a1 := As{bs{}}
+  a1.GetFirst("a1")
 }
+
+//https://stackoverflow.com/questions/42839517/how-to-mock-only-specific-method-in-golang
