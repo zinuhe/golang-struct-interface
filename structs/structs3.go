@@ -7,23 +7,25 @@ type s interface{
     getSecond()
 }
 
-type A struct{
+type As struct{
     s
 }
 
-type a struct{
+type bs struct{
 
 }
 
-func (s *A) GetFirst() {
-    s.getSecond()
+func (ss *As) GetFirst() {
+    ss.getSecond()
 }
 
-func (s a) getSecond() {
-    fmt.Println("getSecond")
+func (ss bs) getSecond() {
+    fmt.Println("--get_second--")
 }
 
 func main() {
-  //Use a 
-  fmt.Printf("A{a{}}: %+v", A{a{}})
+  fmt.Printf("As{bs{}}: %+v \n\n", As{bs{}})
+
+  a1 := bs{}
+  a1.getSecond()
 }
