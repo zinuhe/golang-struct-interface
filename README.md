@@ -96,9 +96,9 @@ A variable of type interface can hold any value which implements the interface. 
 
 
 
-The interface{} type
+The ```interface{}``` type
 
-The interface{} type is the interface that has no methods. Since there is no implements keyword, all types implement at least zero methods, and satisfying an interface is done automatically, all types satisfy the empty interface. That means that if you write a function that takes an interface{} value as a parameter, you can supply that function with any value.
+The interface{} type is the interface that has no methods. Since there is no implements keyword, all types implement at least zero methods, and satisfying an interface is done automatically, all types satisfy the empty interface. That means that if you write a function that takes an ```interface{}``` value as a parameter, you can supply that function with any value.
 
 ```go
 package main
@@ -125,7 +125,7 @@ func main() {
 That’s pretty ugly.
 
 <br><br>
-We say that something satisfies this interface (or implements this interface) if it has a method with the exact signature *String() string*.
+We say that something satisfies this interface (or implements this interface) if it has a method with the exact signature ```String() string```.
 ```go
 type Stringer interface {
     String() string
@@ -143,7 +143,7 @@ func (b Book) String() string {
 
 
 <br><br>
-The following *Count* type also satisfies the *fmt.Stringer* interface — again because it has a method with the exact signature *String() string*.
+The following *Count* type also satisfies the ```fmt.Stringer``` interface — again because it has a method with the exact signature ```String() string```.
 ```go
 type Count int
 
@@ -165,7 +165,7 @@ For reference<br>
 
 Go supports methods defined on struct types.
 
-This area method has a receiver type of *rect.
+This area method has a receiver type of ```*rect```.
 
 ```go
 type rect struct {
