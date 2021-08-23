@@ -7,10 +7,11 @@ go mod used
 go mod init github.com/zinuhe/golang-struct-interface
 ```
 
-1. [Structs](#struct)
-2. [Interfaces](#interface)
-3. [Methods](#method)
-4. [Mocks](#mock)
+1. [Structs](#struct)<br>
+1.1. [Nested](#structNested)
+3. [Interfaces](#interface)
+4. [Methods](#method)
+5. [Mocks](#mock)
 
 <a name="struct"></a>
 <h1>1. Structs</h1>
@@ -73,8 +74,39 @@ func newPerson(name string) *person {
 p := newPerson("Jon")
 ```
 
+<a name="structNested"></a>
+<h2>1.1. Nested</h2>
+```go
+package main
 
-For reference<br>
+import "fmt"
+
+type Logger struct{}
+
+func (logger *Logger) Log(message string) {
+	fmt.Println(message)
+}
+
+type HttpClient struct {
+	logger *Logger
+}
+
+func (client *HttpClient) Get(url string) string {
+	client.logger.Log("Response from Logger:" + url)
+	return "Response from Get:" + url
+}
+
+func main() {
+	var lg Logger
+        lg.Log("Log")
+
+	var hc HttpClient
+	var ms = hc.Get("Get")
+	fmt.Println("ms:", ms)
+}
+```
+
+<br>For reference<br>
 [Go by example: Structs](https://gobyexample.com/structs)<br>
 [golang-book](https://www.golang-book.com/books/intro/9)
 
