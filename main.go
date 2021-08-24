@@ -24,11 +24,11 @@ func main() {
 	var so interfaces.SimpleOperations
 	fmt.Println("Sum(5+5):", so.Sum(5, 5))
 
-	sso := interfaces.SimpleOperations{}
+	// sso := interfaces.SimpleOperations{}
 	// isc := interfaces.StandardCalculator
 
-	x := interfaces.StandardCalculator{sso}
+	// x := interfaces.StandardCalculator{sso}
 
-	interfaces.Calculator(x, 10, 10)
+	// interfaces.Calculator(x, 10, 10)
 	// fmt.Println(interfaces.Calculator(x, 10, 10))
 }
