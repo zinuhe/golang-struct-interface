@@ -21,6 +21,14 @@ func main() {
 
 	// From interfaces/interfaces2.go
 	fmt.Println("\n\nINTERFACES example 2")
-	var x interfaces.Operators
-	fmt.Println("Sum(5+5):", x.Sum(5, 5))
+	var so interfaces.SimpleOperations
+	fmt.Println("Sum(5+5):", so.Sum(5, 5))
+
+	sso := interfaces.SimpleOperations{}
+	// isc := interfaces.StandardCalculator
+
+	x := interfaces.StandardCalculator{sso}
+
+	interfaces.Calculator(x, 10, 10)
+	// fmt.Println(interfaces.Calculator(x, 10, 10))
 }

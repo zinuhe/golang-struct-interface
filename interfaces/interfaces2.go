@@ -1,26 +1,28 @@
 package interfaces
 
-type Calculator interface {
+type StandardCalculator interface {
 	sum(a int, b int) int
 	subtraction(a int, b int) int
 	multiplication(a int, b int) int
 }
 
-type Operators struct{}
+type SimpleOperations struct{}
 
-func (o Operators) Sum(a int, b int) int {
+func (o SimpleOperations) Sum(a int, b int) int {
 	return a + b
 }
-
-func (o Operators) subtraction(a int, b int) int {
+func (o SimpleOperations) Subtraction(a int, b int) int {
 	return a - b
 }
-
-func (o Operators) multiplication(a int, b int) int {
+func (o SimpleOperations) multiplication(a int, b int) int {
 	return a * b
 }
 
+func Calculator(sc StandardCalculator, a int, b int) int {
+	return sc.sum(a, b)
+}
+
 // func main(){
-//     var x Operators
+//     var x SimpleOperations
 //     fmt.Println("Sum(5+5):", x.sum(5, 5))
 // }
