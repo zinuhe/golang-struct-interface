@@ -79,21 +79,36 @@ type text string
 type number int
 
 func main() {
-  var t text
-  t = "aa"
-  t.print()
+    var t text
+    t = "aa"
+    t.print()
 
-  var x number
-  x = 11
-  x.print()
+    var x number
+    x = 11
+    x.print()
 }
+
 
 func (t text) print() {
    fmt.Println("text:",t)
 }
 
+
 func (n number) print() {
-   fmt.Println("number",n)
+    fmt.Println("number",n)
+    fmt.Println(n.sum(5,5))
+
+    fmt.Println(n.operation(5))
+}
+
+func (n number) sum(a int, b int) int {
+    return a + b
+}
+
+func (n number) operation(p int) int {
+    tmp := p * p
+    tmp = tmp + n.sum(5, 5)
+    return tmp
 }
 ```
 
