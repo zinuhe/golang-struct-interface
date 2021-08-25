@@ -74,6 +74,30 @@ func newPerson(name string) *person {
 p := newPerson("Jon")
 ```
 
+```go
+type text string
+type number int
+
+func main() {
+  var t text
+  t = "aa"
+  t.print()
+
+  var x number
+  x = 11
+  x.print()
+}
+
+func (t text) print() {
+   fmt.Println("text:",t)
+}
+
+func (n number) print() {
+   fmt.Println("number",n)
+}
+```
+
+
 <a name="structNested"></a>
 <h2>1.1. Nested</h2>
 ```go
