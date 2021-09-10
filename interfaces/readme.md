@@ -22,23 +22,26 @@ func (s *Store) Get(id int) error { ... } //get item by id            | func Ini
                                                                       |
 //user.go                                                             | //user.go
 package user                                                          | package user
-
-type UserStore interface {
-   Insert(item interface{}) error
-   Get(id int) error
-}
-
-type UserService struct {
-   store UserStore
-}
-
-// Accepting interface here!
-func NewUserService(s UserStore) *UserService {
-   return &UserService{
-      store: s,
-   }
-}
+                                                                      |
+type UserStore interface {                                            | type UserService struct {
+   Insert(item interface{}) error                                     |   store db.Store
+   Get(id int) error                                                  | }
+}                                                                     |
+                                                                      | func NewUserService(s db.Store) *UserService {
+type UserService struct {                                             |   return &UserService{
+   store UserStore                                                    |       store: s,
+}                                                                     |   }
+                                                                      | }
+// Accepting interface here!                                          |
+func NewUserService(s UserStore) *UserService {                       |
+   return &UserService{                                               | func (u *UserService) CreateUser() { ... }
+      store: s,                                                       | func (u *UserService) RetrieveUser(id int) User { ... }
+   }                                                                  |
+}                                                                     |
 
 func (u *UserService) CreateUser() { ... }
 func (u *UserService) RetrieveUser(id int) User { ... }
 ```
+
+More Information
+[accept-interfaces-return-structs-in-go](https://bryanftan.medium.com/accept-interfaces-return-structs-in-go-d4cab29a301b)
