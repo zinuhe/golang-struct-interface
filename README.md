@@ -24,15 +24,17 @@ Structs are mutable
 Ways to declare and use structs<br>
 ```go
 type person struct {
-    name string
-    age  int
+    name   string
+    age    int
+    grades []int
 }
 ```
 
 ```go
-var p person = person{         
-		name: "John",         
-		age: 30,     
+var p person = person {  
+		name: "John",
+		age: 30,
+		grades: []int{ 7, 8, 9},
 	}
 ```
 
@@ -47,11 +49,11 @@ c := new(person)
 ```
 
 ```go
-p := person{name: "Sean", age: 50}
+p := person{name: "Sean", age: 50, grades: []int{1,2,3}}
 ```
 
 ```go
-p := person{"Sean", 50}
+p := person{"Sean", 50, []int{7,8,9} }
 ```
 
 ```go
