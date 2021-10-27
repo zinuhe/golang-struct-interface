@@ -63,6 +63,7 @@ p.age = 42
 
 ```go
 // An '&' prefix yields a pointer to the struct.
+// We can create pointers of a struct using the address-of operator(&).
 fmt.Println(&person{name: "Ann", age: 40})
 ```
 
