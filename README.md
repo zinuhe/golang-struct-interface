@@ -148,6 +148,36 @@ func main() {
 }
 ```
 
+```go
+package main
+ 
+import (
+    "fmt"
+)
+ 
+type User struct {
+    name string
+}
+ 
+type Service struct {
+        name string
+    user User
+}
+ 
+func main() {
+ 
+    google := Service{
+        name: "Google",
+        user: User{
+            name: "John Doe",
+        },
+    }
+ 
+    // accessing from nested struct
+    fmt.Println(google.user.name)  // prints "John Doe"
+}
+```
+
 <br>For reference<br>
 [Go by example: Structs](https://gobyexample.com/structs)<br>
 [golang-book](https://www.golang-book.com/books/intro/9)
