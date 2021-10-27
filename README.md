@@ -117,6 +117,7 @@ func (n number) operation(p int) int {
 
 <a name="structNested"></a>
 <h2>1.1. Nested</h2>
+
 ```go
 package main
 
