@@ -61,9 +61,30 @@ p := person{name: "jimmy"}
 p.age = 42
 ```
 
+POINTERS OF STRUCT
+We can create pointers of a struct using the address-of operator(&).
+
+```go
+package main
+ 
+import (
+    "fmt"
+)
+ 
+type Student struct {
+    name string
+}
+ 
+func main() {
+    ptrStudent := &Student{name: "John"}
+     
+    fmt.Println(ptrStudent) // prints &{John}
+}
+```
+
+
 ```go
 // An '&' prefix yields a pointer to the struct.
-// We can create pointers of a struct using the address-of operator(&).
 fmt.Println(&person{name: "Ann", age: 40})
 ```
 
