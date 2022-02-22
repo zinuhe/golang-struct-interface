@@ -32,10 +32,10 @@ type person struct {
 
 ```go
 var p = person {  
-		name: "John",
-		age: 30,
-		grades: []int{ 7, 8, 9},
-	}
+	name: "John",
+	age: 30,
+	grades: []int{ 7, 8, 9},
+}
 ```
 
 ```go
