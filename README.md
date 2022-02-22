@@ -23,7 +23,7 @@ Structs are mutable
 
 Ways to declare and use structs<br>
 ```go
-type person struct {
+type person struct{
     name   string
     age    int
     grades []int
@@ -31,7 +31,7 @@ type person struct {
 ```
 
 ```go
-var p = person {  
+var p = person{
 	name: "John",
 	age: 30,
 	grades: []int{ 7, 8, 9},
