@@ -43,5 +43,7 @@ func (u *UserService) CreateUser() { ... }
 func (u *UserService) RetrieveUser(id int) User { ... }
 ```
 
-More Information
+# More Information
 [accept-interfaces-return-structs-in-go](https://bryanftan.medium.com/accept-interfaces-return-structs-in-go-d4cab29a301b)
+
+[Interfaces](https://golongwithgolang.com/interfaces-in-golang)
